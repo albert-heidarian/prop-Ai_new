@@ -488,6 +488,21 @@ html[dir="rtl"] .col-md-offset-11, html .col-md-offset-11 { margin-left: 0 !impo
   direction: rtl !important;
 }
 
+/* Persian feature descriptions reveal words from the right edge. */
+html[dir="rtl"] .feature-explorer-section .feature-description {
+  direction: rtl !important;
+  text-align: right !important;
+  display: block !important;
+  font-family: "Vazirmatn", system-ui, sans-serif !important;
+  unicode-bidi: plaintext !important;
+}
+
+html[dir="rtl"] .feature-explorer-section .feature-description > div {
+  direction: rtl !important;
+  unicode-bidi: plaintext !important;
+  font-family: inherit !important;
+}
+
 /* RTL Typing Text Animation Rules */
 .landing-main-header {
   direction: rtl !important;

@@ -5,6 +5,19 @@ console.log('--- Applying Typing Animation RTL, آینده نگر and Full RTL U
 // 1. Update main-462OM7XN.js
 let mainJs = fs.readFileSync('main-462OM7XN.js', 'utf8');
 
+// Feature descriptions are Persian content, not icon ligatures.
+mainJs = mainJs.replace('"translate","no","data-nosnippet","",1,"body","feature-description"', '"data-nosnippet","",1,"body","feature-description"');
+
+// Reveal Persian feature words in logical order: rightmost word first.
+mainJs = mainJs.replace(
+  'if(isFa&&a.words){a.words.forEach(w=>{w.style.display="inline-block";w.style.margin="0 0.2rem";w.style.whiteSpace="nowrap"})}',
+  'if(isFa&&a.words){a.words.forEach(w=>{w.style.display="inline-block";w.style.margin="0 0.2rem";w.style.whiteSpace="nowrap";w.style.direction="rtl";w.style.unicodeBidi="plaintext"})}'
+);
+mainJs = mainJs.replace(
+  'stagger:isFa?.04:.005,duration:isFa?.2:.1',
+  'stagger:isFa?{each:.04,from:"start"}:.005,duration:isFa?.2:.1'
+);
+
 // A. Replace typed-header class methods
 const naviIdx = mainJs.indexOf("ngAfterViewInit(){let isFa=/");
 let facIdx = mainJs.indexOf("static \\u0275fac=function(n){return new(n||sl)", naviIdx);

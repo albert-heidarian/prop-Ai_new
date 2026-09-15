@@ -122,7 +122,7 @@
       const isHero = el.closest('.welcome-section') || el.closest('.hero-section');
       if (isHero) {
         // Hero prominent vertical logo
-        el.innerHTML = '<img src="/logo.svg" class="official-logo-img official-logo-hero" alt="پراپ — Prop AI" />';
+        el.innerHTML = '<img src="/main.svg" class="official-logo-img official-logo-hero" alt="پراپ — Prop AI" />';
       } else {
         // Header / nav horizontal logo
         el.innerHTML = '<img src="/logo-horizontal.svg" class="official-logo-img official-logo-header" alt="پراپ — Prop AI" />';
