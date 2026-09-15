@@ -1,28 +1,69 @@
 (function () {
   'use strict';
 
-  document.documentElement.lang = 'fa';
-  document.documentElement.dir = 'rtl';
-  document.title = 'پراپ — راهکارهای هوش مصنوعی';
+  function enforceRTL() {
+    if (document.documentElement.getAttribute('dir') !== 'rtl') {
+      document.documentElement.setAttribute('dir', 'rtl');
+    }
+    if (document.documentElement.getAttribute('lang') !== 'fa') {
+      document.documentElement.setAttribute('lang', 'fa');
+    }
+    if (document.body && document.body.getAttribute('dir') !== 'rtl') {
+      document.body.setAttribute('dir', 'rtl');
+    }
+  }
+
+  function updatePageTitle() {
+    const title = document.title;
+    if (title.includes('Google Antigravity') || title.includes('Antigravity')) {
+      document.title = title
+        .replace(/Google Antigravity/g, 'پراپ')
+        .replace(/Antigravity/g, 'پراپ');
+    }
+  }
 
   function cleanIconText() {
     // Clean raw ligature text from dropdown-icon elements
     document.querySelectorAll('.dropdown-icon').forEach(el => {
-      if (el.textContent && el.textContent.includes('keyboard_arrow_down')) {
+      if (el.textContent && (el.textContent.includes('keyboard_arrow_down') || el.textContent.includes('keyboard_arrow_left') || el.textContent.includes('keyboard_arrow_right'))) {
         el.textContent = '';
       }
     });
+
     // Remove any leftover download icon in CTA button
     document.querySelectorAll('.download-button').forEach(btn => {
       const icon = btn.querySelector('.dropdown-icon');
       if (icon) icon.remove();
-      // Ensure button text is only "شروع رایگان"
       const spans = btn.querySelectorAll('span');
       spans.forEach(s => {
         if (s.textContent.trim() === 'download') {
           s.remove();
         }
       });
+    });
+  }
+
+  function localizeDynamicUI() {
+    // Search inputs
+    document.querySelectorAll('input[type="text"], input[type="search"]').forEach(input => {
+      const ph = input.getAttribute('placeholder');
+      if (ph && (ph.toLowerCase().includes('search') || ph.includes('Search docs'))) {
+        input.setAttribute('placeholder', 'جستجو در مستندات...');
+      }
+    });
+
+    // Code copy buttons
+    document.querySelectorAll('.copy-button, button.copy, [aria-label*="Copy"]').forEach(btn => {
+      if (btn.textContent.trim() === 'Copy') {
+        btn.textContent = 'کپی';
+      }
+    });
+
+    // Breadcrumbs
+    document.querySelectorAll('.breadcrumb-separator, .docs-breadcrumb span').forEach(el => {
+      if (el.textContent.trim() === '>') {
+        el.textContent = '‹';
+      }
     });
   }
 
@@ -73,34 +114,96 @@
     footerNav.parentElement.appendChild(seals);
   }
 
-  function init() {
+  function injectOfficialLogo() {
+    // 1. Header and navigation logos
+    document.querySelectorAll('antigravity-logo').forEach(el => {
+      if (el.dataset.logoInjected === 'true') return;
+      
+      const isHero = el.closest('.welcome-section') || el.closest('.hero-section');
+      if (isHero) {
+        // Hero prominent vertical logo
+        el.innerHTML = '<img src="/logo.svg" class="official-logo-img official-logo-hero" alt="پراپ — Prop AI" />';
+      } else {
+        // Header / nav horizontal logo
+        el.innerHTML = '<img src="/logo-horizontal.svg" class="official-logo-img official-logo-header" alt="پراپ — Prop AI" />';
+      }
+      el.dataset.logoInjected = 'true';
+    });
+
+    // 2. Footer google-logo
+    document.querySelectorAll('google-logo').forEach(el => {
+      if (el.dataset.logoInjected === 'true') return;
+      el.innerHTML = '<img src="/logo-horizontal.svg" class="official-logo-img official-logo-footer" alt="پراپ — Prop AI" />';
+      el.dataset.logoInjected = 'true';
+    });
+
+    // 3. Any image element still targeting old antigravity-logo.png
+    document.querySelectorAll('img[src*="antigravity-logo.png"]').forEach(img => {
+      img.src = '/logo.svg';
+    });
+
+    // 4. Update favicons dynamically in document head if needed
+    const favicons = document.querySelectorAll('link[rel*="icon"]');
+    favicons.forEach(link => {
+      if (!link.href.includes('logo.svg') && !link.href.includes('favicon.png')) {
+        link.href = '/logo-icon.svg';
+        link.type = 'image/svg+xml';
+      }
+    });
+  }
+
+  function injectFooterLargeBrand() {
+    if (document.getElementById('footerLargeBrand')) return;
+    const footer = document.querySelector('footer.footer') || document.querySelector('footer');
+    if (!footer) return;
+
+    const brandEl = document.createElement('div');
+    brandEl.className = 'footer-large-brand';
+    brandEl.id = 'footerLargeBrand';
+    brandEl.innerHTML = `
+      <img src="/logo.svg" alt="پراپ — Prop AI" class="footer-large-logo-img" />
+      <span class="footer-large-brand-name">PROP-AI</span>
+    `;
+    footer.appendChild(brandEl);
+  }
+
+  function runAll() {
+    enforceRTL();
+    updatePageTitle();
     cleanIconText();
+    localizeDynamicUI();
     injectHeroStats();
     injectTrustSeals();
+    injectOfficialLogo();
+    injectFooterLargeBrand();
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', runAll);
   } else {
-    init();
+    runAll();
   }
 
-  // Monitor DOM for Angular client navigation and hydrations
+  // Periodic check for Angular client navigation
   let count = 0;
   const timer = setInterval(() => {
-    init();
+    runAll();
     count++;
-    if (count > 30) clearInterval(timer);
+    if (count > 40) clearInterval(timer);
   }, 250);
 
   // MutationObserver to catch any dynamically rendered elements
   if (typeof MutationObserver !== 'undefined') {
     const observer = new MutationObserver(() => {
-      cleanIconText();
+      runAll();
     });
-    observer.observe(document.body || document.documentElement, {
+    observer.observe(document.documentElement, {
       childList: true,
-      subtree: true
+      subtree: true,
+      characterData: true
     });
   }
+
+  // Listen to navigation popstate
+  window.addEventListener('popstate', runAll);
 })();

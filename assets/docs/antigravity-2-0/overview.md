@@ -1,34 +1,29 @@
 ---
 slug: overview
-section: Antigravity 2.0
-title: Overview
-path: Antigravity 2.0 / Overview
+section: پلتفرم پراپ ۲.۰
+title: معرفی پلتفرم پراپ ۲.۰
+path: پلتفرم پراپ ۲.۰ / معرفی
 ---
 
-# Antigravity 2.0
+# پلتفرم هوش مصنوعی پراپ ۲.۰
 
-## Overview
+## معرفی و نمای کلی
 
-As we go deeper into the agent-first era, Antigravity is evolving to further empower developers. Introducing Antigravity 2.0, a standalone desktop application tailored for managing AI agents that execute complex knowledge and coding tasks.
+با ورود به عصر ایجنت‌های هوشمند خودکار، پلتفرم پراپ برای توانمندسازی تیم‌ها، سازمان‌ها و توسعه‌دهندگان طراحی شده است. **پراپ ۲.۰** یک محیط یکپارچه و پیشرفته برای هدایت، اجرا و هماهنگی ایجنت‌های هوش مصنوعی است که وظایف پیچیده تحلیلی، برنامه‌نویسی و اتوماسیون داده را بر عهده می‌گیرند.
 
-### What is Antigravity 2.0?
+### پلتفرم پراپ ۲.۰ چیست؟
 
-Antigravity 2.0 serves as your AI agents' central command center, providing a unified platform to launch, monitor, and orchestrate their activities. Unlike its predecessor, the Agent Manager, Antigravity 2.0 is a standalone application that functions independently of an IDE.
+پراپ ۲.۰ به عنوان مرکز فرماندهی ایجنت‌های شما عمل می‌کند و بستری متمرکز برای راه‌اندازی، مانیتورینگ و ارکستراسیون فعالیت‌های آن‌ها فراهم می‌سازد. پراپ ۲.۰ با معماری مدرن خود، به صورت مستقل و هماهنگ با تمام ابزارهای شما کار می‌کند.
 
-Within this interface, you can orchestrate agents both synchronously and asynchronously to:
+در این محیط، می‌توانید ایجنت‌ها را به صورت هم‌گام و ناهم‌گام برای موارد زیر به کار بگیرید:
+* اجرای وظایف سیستمی و پردازش داده
+* انجام عملیات خواندن و نوشتن فایل‌ها و آرتیفکت‌ها
+* جستجو و تحلیل داده‌های اینترنتی و پایگاه‌های دانش
+* ادغام با ابزارهای خارجی از طریق پروتکل‌های استاندارد (MCP) و مهارت‌های سفارشی
+* مدیریت زیر-ایجنت‌های موازی
+* تست و اعتبارسنجی مداوم خروجی‌ها
 
-* Execute system commands  
-* Perform file read/write operations  
-* Conduct web searches  
-* Integrate with external tools via skills and MCP servers  
-* Manage subagents  
-* Interact with Chrome  
-* Create artifacts / implementation plans
-
-Whether you are performing deep research or building new applications, Antigravity offers a streamlined interface for all types of knowledge work.
-
-![Antigravity 2.0 UI](assets/image/docs/AGY2.0-Home.png)
-
-### Getting Started
-
-Ready to dive in? Check out the **[Getting Started](/docs/getting-started)** guide to install Antigravity 2.0 and start your first project.
+### ویژگی‌های کلیدی
+* **معماری چند ایجنتی (Multi-Agent):** اجرای موازی چندین دستیار هوشمند با وظایف تفکیک‌شده.
+* **آرتیفکت‌های شفاف:** مشاهده و ویرایش خروجی‌های ساختاریافته در حین کار.
+* **حفظ حریم خصوصی:** داده‌های سازمانی شما ایزوله و محافظت شده باقی می‌مانند.

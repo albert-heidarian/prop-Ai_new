@@ -9,12 +9,6 @@ app.get(['/healthz', '/_health', '/health'], (_req, res) => {
   res.status(200).send('OK');
 });
 
-// Serve static assets from root directory
-app.use(express.static(__dirname));
-
-// Also serve public directory for any public assets
-app.use(express.static(path.join(__dirname, 'public')));
-
 // Specific routes for classic / legacy version
 app.get(['/classic', '/legacy', '/old'], (_req, res) => {
   res.sendFile(path.join(__dirname, 'public/index.html'));
@@ -37,6 +31,12 @@ app.get('/:dir/:subpage', (req, res, next) => {
   }
   next();
 });
+
+// Serve static assets from root directory without directory redirects
+app.use(express.static(__dirname, { redirect: false }));
+
+// Also serve public directory for any public assets
+app.use(express.static(path.join(__dirname, 'public')));
 
 // SPA fallback to index.html for all other routes
 app.get('*', (_req, res) => {

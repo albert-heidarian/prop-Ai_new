@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 310" fill="none">
+  <!-- Badge -->
+  <rect x="10" y="10" width="260" height="216" rx="36" fill="#000000"/>
+  
+  <!-- Letter A -->
+  <!-- Outer shape of A -->
+  <path d="M 52 182 L 105 45 Q 110 32 120 32 Q 130 32 135 45 L 188 182 Q 190 188 183 188 L 160 188 Q 154 188 151 181 L 138 144 L 102 144 L 89 181 Q 86 188 80 188 L 57 188 Q 50 188 52 182 Z" fill="#FFFFFF"/>
+  <!-- Sparkle star inside A -->
+  <!-- Wait! In the image, is the sparkle cut out or solid? -->
+</svg>
