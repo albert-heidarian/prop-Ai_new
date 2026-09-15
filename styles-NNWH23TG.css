@@ -95,6 +95,21 @@ slider-arrow-controls .slider-control-button > span {
   display: none !important;
 }
 
+/* Keep animated Persian feature descriptions in normal RTL text flow. */
+html[dir="rtl"] .feature-explorer-section .feature-description {
+  direction: rtl !important;
+  text-align: right !important;
+  display: block !important;
+  font-family: "Vazirmatn", system-ui, sans-serif !important;
+  unicode-bidi: plaintext !important;
+}
+
+html[dir="rtl"] .feature-explorer-section .feature-description > div {
+  font-family: inherit !important;
+  direction: rtl !important;
+  unicode-bidi: plaintext !important;
+}
+
 /* Draw a crisp, high-DPI vector chevron matching current text color */
 .dropdown-nav .dropdown-icon::after,
 app-button .dropdown-icon::after {
