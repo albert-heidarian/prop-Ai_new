@@ -14,6 +14,10 @@ mainJs = mainJs.replace(
   'if(isFa&&a.words){a.words.forEach(w=>{w.style.display="inline-block";w.style.margin="0 0.2rem";w.style.whiteSpace="nowrap";w.style.direction="rtl";w.style.unicodeBidi="plaintext"})}'
 );
 mainJs = mainJs.replace(
+  'let animTargets=(isFa&&a.words?.length)?a.words:a.chars;',
+  'let animTargets=(isFa&&a.words?.length)?a.words.slice().reverse():a.chars;'
+);
+mainJs = mainJs.replace(
   'stagger:isFa?.04:.005,duration:isFa?.2:.1',
   'stagger:isFa?{each:.04,from:"start"}:.005,duration:isFa?.2:.1'
 );

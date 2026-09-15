@@ -133,7 +133,7 @@
     // 2. Footer google-logo
     document.querySelectorAll('google-logo').forEach(el => {
       if (el.dataset.logoInjected === 'true') return;
-      el.innerHTML = '<img src="/logo-horizontal.svg" class="official-logo-img official-logo-footer" alt="پراپ — Prop AI" />';
+      el.innerHTML = '<img src="/main.svg" class="official-logo-img official-logo-footer" alt="پراپ — Prop AI" />';
       el.dataset.logoInjected = 'true';
     });
 
