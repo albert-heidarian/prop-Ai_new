@@ -85,6 +85,11 @@ app-button .dropdown-icon {
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
+/* Hide directional markers from dropdown submenu links. */
+.subnav-link .link-arrow {
+  display: none !important;
+}
+
 /* Draw a crisp, high-DPI vector chevron matching current text color */
 .dropdown-nav .dropdown-icon::after,
 app-button .dropdown-icon::after {
