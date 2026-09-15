@@ -1,0 +1,6 @@
+{
+  "name": "پراپ — راهکارهای هوش مصنوعی",
+  "description": "پراپ با ارائه ابزارهای پیشرفته هوش مصنوعی، به شما کمک می‌کند فرآیندها را خودکارسازی کنید، بینش‌های ارزشمند به دست آورید و رشد پایدار داشته باشید.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
