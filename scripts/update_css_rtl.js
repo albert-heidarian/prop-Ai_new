@@ -510,11 +510,34 @@ header-dropdown .nav-button:hover {
   flex-wrap: wrap !important;
 }
 
+/* Keep trust symbols beside the footer link list. */
+.footer-google-links .grid-row > .grid-col:last-child {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 2rem !important;
+  flex-wrap: wrap !important;
+}
+
+.footer-google-links .grid-row > .grid-col:last-child .footer-google-nav {
+  flex: 1 1 auto !important;
+}
+
 .footer-trust-seals {
   display: inline-flex !important;
   align-items: center !important;
   gap: 16px !important;
   direction: rtl !important;
+  margin: 0 !important;
+  flex: 0 0 auto !important;
+}
+
+@media (max-width: 767px) {
+  .footer-google-links .grid-row > .grid-col:last-child {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
 }
 
 /* Remove Physics/Antigravity Footer Wrapper */
@@ -527,9 +550,9 @@ header-dropdown .nav-button:hover {
    ========================================================================== */
 .footer-large-brand {
   display: block !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 3.5rem 0 0 0 !important;
+  width: 100vw !important;
+  max-width: none !important;
+  margin: 3.5rem calc(50% - 50vw) 0 !important;
   padding: 3rem 0 1.5rem 0 !important;
   border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
   box-sizing: border-box !important;
