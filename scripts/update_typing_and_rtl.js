@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-console.log('--- Applying Typing Animation RTL, آیندهنگر and Full RTL Updates ---');
+console.log('--- Applying Typing Animation RTL, آینده نگر and Full RTL Updates ---');
 
 // 1. Update main-462OM7XN.js
 let mainJs = fs.readFileSync('main-462OM7XN.js', 'utf8');
@@ -20,22 +20,22 @@ if (naviIdx !== -1 && facIdx !== -1) {
 
 // B. Update home page typed text
 mainJs = mainJs.replace(
-  '["text","راهکارهای هوش مصنوعی برای کسبوکارهای آیندهنگر"',
-  '["text","راهکارهای هوش مصنوعی برای کسب‌وکارهای آیندهنگر"'
+  '["text","راهکارهای هوش مصنوعی برای کسبوکارهای آینده نگر"',
+  '["text","راهکارهای هوش مصنوعی برای کسب‌وکارهای آینده نگر"'
 );
 mainJs = mainJs.replace(
   '["text","راهکارهای هوش مصنوعی برای کسب‌وکارهای آینده‌نگر"',
-  '["text","راهکارهای هوش مصنوعی برای کسب‌وکارهای آیندهنگر"'
+  '["text","راهکارهای هوش مصنوعی برای کسب‌وکارهای آینده نگر"'
 );
 
 // C. Update footer slogan
 mainJs = mainJs.replace(
   'slogan:"راهکارهای هوش مصنوعی برای کسب‌وکارهای آینده‌نگر."',
-  'slogan:"راهکارهای هوش مصنوعی برای کسب‌وکارهای آیندهنگر."'
+  'slogan:"راهکارهای هوش مصنوعی برای کسب‌وکارهای آینده نگر."'
 );
 mainJs = mainJs.replace(
   'slogan:"راهکارهای هوش مصنوعی برای کسب‌وکارهای آینده نگر."',
-  'slogan:"راهکارهای هوش مصنوعی برای کسب‌وکارهای آیندهنگر."'
+  'slogan:"راهکارهای هوش مصنوعی برای کسب‌وکارهای آینده نگر."'
 );
 
 // D. Localize Manage cookies
