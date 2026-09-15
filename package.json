@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.ts",
     "dev": "node server.ts",
-    "build": "node scripts/apply_translations.js && node scripts/update_css_rtl.js && node scripts/translate_docs.js && node scripts/localize_all_html.js && echo 'Build complete'"
+    "build": "node scripts/apply_translations.js && node scripts/update_typing_and_rtl.js && node scripts/update_css_rtl.js && node scripts/translate_docs.js && node scripts/localize_all_html.js && node scripts/update_ayandehnegar.js && echo 'Build complete'"
   },
   "dependencies": {
     "express": "^4.21.2"

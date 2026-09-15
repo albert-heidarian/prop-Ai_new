@@ -161,8 +161,7 @@
     brandEl.className = 'footer-large-brand';
     brandEl.id = 'footerLargeBrand';
     brandEl.innerHTML = `
-      <img src="/logo.svg" alt="پراپ — Prop AI" class="footer-large-logo-img" />
-      <span class="footer-large-brand-name">PROP-AI</span>
+      <div class="footer-large-brand-name">PROP-AI</div>
     `;
     footer.appendChild(brandEl);
   }

@@ -27,7 +27,7 @@ for (const filePath of htmlFiles) {
 
   // 2. Titles and metas
   content = content.replace(/<title>[^<]*<\/title>/i, '<title>پراپ — راهکارهای هوش مصنوعی</title>');
-  content = content.replace(/content="Google Antigravity - Build the new way"/gi, 'content="پراپ - راهکارهای هوش مصنوعی برای کسب‌وکارهای آینده‌نگر"');
+  content = content.replace(/content="Google Antigravity - Build the new way"/gi, 'content="پراپ - راهکارهای هوش مصنوعی برای کسب‌وکارهای آیندهنگر"');
   content = content.replace(/content="Google Antigravity"/gi, 'content="پراپ"');
   content = content.replace(/content="@antigravity"/gi, 'content="@prop_ai"');
 
