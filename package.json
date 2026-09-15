@@ -2,10 +2,10 @@
   "name": "new-prop-ai",
   "version": "1.0.0",
   "description": "پراپ — راهکارهای هوش مصنوعی",
-  "main": "server.js",
+  "main": "server.ts",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js",
+    "start": "node server.ts",
+    "dev": "node server.ts",
     "build": "echo 'Build complete'"
   },
   "dependencies": {

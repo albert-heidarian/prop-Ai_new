@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>پراپ — راهکارهای هوش مصنوعی</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" onclick="toggleMenu()">✕</button>
+  <a href="#services" onclick="toggleMenu()">خدمات</a>
+  <a href="#how" onclick="toggleMenu()">نحوه کار</a>
+  <a href="#pricing" onclick="toggleMenu()">قیمت‌گذاری</a>
+  <a href="#testimonials" onclick="toggleMenu()">نظرات</a>
+  <button class="btn-primary" style="margin-top:1rem">شروع رایگان</button>
+</div>
+
+<!-- Nav -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">پراپ</a>
+  <ul class="nav-links">
+    <li><a href="#services">خدمات</a></li>
+    <li><a href="#how">نحوه کار</a></li>
+    <li><a href="#pricing">قیمت‌گذاری</a></li>
+    <li><a href="#testimonials">نظرات</a></li>
+  </ul>
+  <button class="nav-cta">شروع رایگان</button>
+  <button class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Hero -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-lines"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span class="dot"></span>
+      راهکارهای هوش مصنوعی نسل بعدی
+    </div>
+    <h1>
+      کسب‌وکار خود را با
+      <span class="line-2"><span class="gradient-text">هوش مصنوعی</span> متحول کنید</span>
+    </h1>
+    <p class="hero-sub">
+      پراپ با ارائه ابزارهای پیشرفته هوش مصنوعی، به شما کمک می‌کند فرآیندها را خودکارسازی کنید، بینش‌های ارزشمند به دست آورید و رشد پایدار داشته باشید.
+    </p>
+    <div class="hero-btns">
+      <button class="btn-primary">شروع رایگان — ۱۴ روز</button>
+      <button class="btn-outline">مشاهده دمو ↙</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">+۳۲۰۰</span><span class="stat-label">کسب‌وکار فعال</span></div>
+      <div class="stat"><span class="stat-num">۹۹.۸٪</span><span class="stat-label">آپ‌تایم تضمینی</span></div>
+      <div class="stat"><span class="stat-num">۱۸۰+</span><span class="stat-label">ادغام آماده</span></div>
+      <div class="stat"><span class="stat-num">×۴.۵</span><span class="stat-label">رشد بهره‌وری</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+  <div class="section-inner">
+    <div class="services-header reveal">
+      <div>
+        <div class="section-label">// خدمات ما</div>
+        <h2 class="section-title">هر آنچه برای<br>رشد هوشمند نیاز دارید</h2>
+      </div>
+      <p class="section-sub">از تحلیل داده تا اتوماسیون پیشرفته — همه چیز در یک پلتفرم یکپارچه</p>
+    </div>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="service-icon" style="background:rgba(124,106,255,0.12);">🧠</div>
+        <h3>پردازش زبان طبیعی</h3>
+        <p>تحلیل متن، خلاصه‌سازی اسناد، پاسخ‌دهی هوشمند و ترجمه چندزبانه با دقت بالا.</p>
+        <div class="service-arrow">بیشتر بدانید ←</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:rgba(255,106,138,0.12);">📊</div>
+        <h3>تحلیل پیشرفته داده</h3>
+        <p>داشبوردهای هوشمند، پیش‌بینی روندها و استخراج بینش‌های کاربردی از حجم عظیم داده.</p>
+        <div class="service-arrow">بیشتر بدانید ←</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:rgba(0,212,170,0.12);">⚡</div>
+        <h3>اتوماسیون فرآیند</h3>
+        <p>خودکارسازی وظایف تکراری، مدیریت گردش کار و بهینه‌سازی زنجیره ارزش کسب‌وکار.</p>
+        <div class="service-arrow">بیشتر بدانید ←</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:rgba(255,202,106,0.12);">👁️</div>
+        <h3>بینایی ماشین</h3>
+        <p>تشخیص تصویر، کنترل کیفیت خودکار، تحلیل ویدیو و سیستم‌های نظارت هوشمند.</p>
+        <div class="service-arrow">بیشتر بدانید ←</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:rgba(124,106,255,0.12);">🤖</div>
+        <h3>چت‌بات سفارشی</h3>
+        <p>ساخت دستیار مکالمه‌ای اختصاصی برای پشتیبانی مشتری، فروش و آموزش کارکنان.</p>
+        <div class="service-arrow">بیشتر بدانید ←</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:rgba(255,106,138,0.12);">🔒</div>
+        <h3>امنیت و انطباق</h3>
+        <p>تشخیص تهدید در لحظه، نظارت بر انطباق مقرراتی و حفاظت از داده‌های حساس سازمانی.</p>
+        <div class="service-arrow">بیشتر بدانید ←</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section id="how">
+  <div class="section-inner">
+    <div class="how-container">
+      <div class="how-visual">
+        <div class="how-circle">
+          <div class="orbit-dot"></div>
+          <div class="orbit-dot"></div>
+          <div class="orbit-dot"></div>
+          <div class="orbit-dot"></div>
+          <div class="how-circle-inner">🧬</div>
+        </div>
+      </div>
+      <div>
+        <div class="section-label reveal">// نحوه کار</div>
+        <h2 class="section-title reveal">در ۳ گام ساده<br>شروع کنید</h2>
+        <p class="section-sub reveal" style="margin-bottom:2.5rem">بدون نیاز به تخصص فنی — فقط کسب‌وکار خود را توصیف کنید و ما بقیه کار را می‌کنیم.</p>
+        <div class="how-steps">
+          <div class="step">
+            <div class="step-num">۰۱</div>
+            <div class="step-content">
+              <h4>اتصال داده‌ها</h4>
+              <p>منابع داده خود را با یک کلیک به پلتفرم پراپ متصل کنید. پشتیبانی از ۱۸۰+ ادغام آماده.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">۰۲</div>
+            <div class="step-content">
+              <h4>آموزش مدل اختصاصی</h4>
+              <p>هوش مصنوعی بر اساس داده‌های خاص کسب‌وکار شما آموزش می‌بیند و بهینه‌سازی می‌شود.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">۰۳</div>
+            <div class="step-content">
+              <h4>استقرار و رشد</h4>
+              <p>مدل را در محیط واقعی مستقر کنید و با مانیتورینگ مداوم، بهبود مستمر داشته باشید.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing">
+  <div class="section-inner">
+    <div class="pricing-header reveal">
+      <div class="section-label">// قیمت‌گذاری</div>
+      <h2 class="section-title">شفاف، منصفانه، مقیاس‌پذیر</h2>
+      <p class="section-sub">بدون هزینه پنهان. با رشد کسب‌وکارتان، پلن خود را ارتقا دهید.</p>
+    </div>
+    <div class="pricing-grid reveal">
+      <div class="plan">
+        <div class="plan-name">استارتر</div>
+        <div class="plan-price">رایگان <span>/ ماهانه</span></div>
+        <div class="plan-desc">برای تیم‌های کوچک و استارتاپ‌هایی که تازه شروع می‌کنند.</div>
+        <ul class="plan-features">
+          <li>تا ۵۰۰۰ درخواست ماهانه</li>
+          <li>۳ پروژه فعال</li>
+          <li>مدل‌های پایه هوش مصنوعی</li>
+          <li>پشتیبانی ایمیلی</li>
+        </ul>
+        <button class="plan-btn outline">شروع رایگان</button>
+      </div>
+      <div class="plan featured">
+        <div class="plan-name">حرفه‌ای</div>
+        <div class="plan-price">۲۹۹ <span>هزارتومان / ماه</span></div>
+        <div class="plan-desc">برای کسب‌وکارهایی که رشد جدی دارند و به قابلیت‌های پیشرفته نیاز دارند.</div>
+        <ul class="plan-features">
+          <li>درخواست‌های نامحدود</li>
+          <li>پروژه‌های نامحدود</li>
+          <li>مدل‌های پیشرفته GPT-4o</li>
+          <li>API اختصاصی</li>
+          <li>پشتیبانی ۲۴/۷</li>
+          <li>آموزش مدل سفارشی</li>
+        </ul>
+        <button class="plan-btn filled">شروع ۱۴ روز رایگان</button>
+      </div>
+      <div class="plan">
+        <div class="plan-name">سازمانی</div>
+        <div class="plan-price">سفارشی <span></span></div>
+        <div class="plan-desc">برای سازمان‌های بزرگ با نیازهای خاص و سطح امنیت بالا.</div>
+        <ul class="plan-features">
+          <li>زیرساخت اختصاصی</li>
+          <li>SLA 99.99%</li>
+          <li>استقرار On-Premise</li>
+          <li>انطباق SOC2 و ISO27001</li>
+          <li>مدیر اکانت اختصاصی</li>
+        </ul>
+        <button class="plan-btn outline">تماس با فروش</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials">
+  <div class="section-inner">
+    <div class="testimonials-header reveal">
+      <div class="section-label">// نظرات مشتریان</div>
+      <h2 class="section-title">هزاران تیم به پراپ اعتماد دارند</h2>
+      <p class="section-sub">داستان‌های واقعی از کسب‌وکارهایی که با پراپ رشد کردند.</p>
+    </div>
+    <div class="testimonials-grid reveal">
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">«با پراپ توانستیم فرآیند پشتیبانی مشتری را کاملاً خودکار کنیم. ۷۰٪ تیکت‌ها بدون دخالت انسانی حل می‌شوند و رضایت مشتری ۴۰٪ بالا رفته.»</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#7c6aff,#ff6a8a);">ر</div>
+          <div><div class="author-name">رضا محمدی</div><div class="author-role">مدیرعامل | تک‌شاپ</div></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">«تحلیل داده‌های فروش که قبلاً ۲ هفته طول می‌کشید حالا در ۲ دقیقه انجام می‌شود. دقت پیش‌بینی ۳۵٪ بهتر شده.»</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#00d4aa,#7c6aff);">س</div>
+          <div><div class="author-name">سارا احمدی</div><div class="author-role">مدیر داده | دیجی‌پلاس</div></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">«ادغام پراپ با سیستم‌های موجود بسیار ساده بود. تیم فنی حرفه‌ای هستند و پشتیبانی واقعاً ۲۴/۷ است.»</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:linear-gradient(135deg,#ff6a8a,#ffca6a);">ا</div>
+          <div><div class="author-name">علی حسینی</div><div class="author-role">CTO | فینتک‌نو</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="section-inner">
+    <div class="cta-box reveal">
+      <div class="section-label" style="justify-content:center;display:flex;">// آماده‌اید؟</div>
+      <h2>همین حالا شروع کنید<br><span class="gradient-text">بدون ریسک</span></h2>
+      <p>۱۴ روز رایگان، بدون نیاز به کارت اعتباری.<br>اگر پراپ به کسب‌وکار شما کمک نکرد، پول‌تان را برمی‌گردانیم.</p>
+      <div class="cta-btns">
+        <button class="btn-primary">شروع رایگان ۱۴ روزه</button>
+        <button class="btn-outline">صحبت با کارشناس</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="font-size:1.4rem;">پراپ</a>
+        <p>پلتفرم هوش مصنوعی برای کسب‌وکارهایی که آینده را جدی می‌گیرند.</p>
+        
+        <div class="footer-trust" style="display:flex; gap: 10px; margin-top: 2rem;">
+          <a referrerpolicy='origin' target='_blank' href='https://trustseal.enamad.ir/?id=697290&Code=7Ngbiv3i1OR6QxSHcu8LyvhcfhYPMGCi'><img referrerpolicy='origin' src='https://trustseal.enamad.ir/logo.aspx?id=697290&Code=7Ngbiv3i1OR6QxSHcu8LyvhcfhYPMGCi' alt='' style='cursor:pointer; background:white; padding:4px; border-radius:8px; height:60px;' code='7Ngbiv3i1OR6QxSHcu8LyvhcfhYPMGCi'></a>
+          <a onclick="window.open('https://panel.aqayepardakht.ir/trustGateway/82391',null,'width=400, height=600, scrollbars=no, resizable=no')" href="javascript:void(0)" referrerpolicy="strict-origin-when-cross-origin" title="پرداخت امن آقای پرداخت">
+            <img style="border-radius: 8px; background:white; padding:4px; height:60px;" src="https://cdn.aqayepardakht.ir/trustlogo/2.svg" alt="پرداخت امن آقای پرداخت">
+          </a>
+        </div>
+      </div>
+      
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>محصول</h5>
+          <ul>
+            <li><a href="#">خدمات</a></li>
+            <li><a href="#">قیمت‌گذاری</a></li>
+            <li><a href="#">API</a></li>
+            <li><a href="#">مستندات</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>شرکت</h5>
+          <ul>
+            <li><a href="#">درباره ما</a></li>
+            <li><a href="#">وبلاگ</a></li>
+            <li><a href="#">مشاغل</a></li>
+            <li><a href="#">تماس</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>حقوقی</h5>
+          <ul>
+            <li><a href="#">حریم خصوصی</a></li>
+            <li><a href="#">شرایط استفاده</a></li>
+            <li><a href="#">امنیت</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 پراپ — تمامی حقوق محفوظ است</span>
+      <div class="footer-socials">
+        <a href="#" class="social-icon">𝕏</a>
+        <a href="#" class="social-icon">in</a>
+        <a href="#" class="social-icon">ig</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- اسکریپت به انتهای بادی منتقل شد تا پس از لود شدن کامل اِلمان‌ها اجرا شود -->
+<script src="/js/app.js"></script>
+</body>
+</html>

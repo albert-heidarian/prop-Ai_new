@@ -1,0 +1,54 @@
+name: Fix Jekyll Front Matter
+on:
+  push:
+    branches: [integrate-best-ai]
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: integrate-best-ai
+          fetch-depth: 0
+      - name: Convert array front matter paths to strings
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          for p in Path('.').rglob('*.md'):
+              text = p.read_text(encoding='utf-8')
+              if not text.startswith('---\n'):
+                  continue
+              end = text.find('\n---', 4)
+              if end < 0:
+                  continue
+              fm = text[:end]
+              lines = fm.splitlines()
+              out=[]
+              i=0
+              changed=False
+              while i < len(lines):
+                  if lines[i].strip() == 'path:':
+                      vals=[]
+                      j=i+1
+                      while j < len(lines) and re.match(r'^\s*-\s+', lines[j]):
+                          vals.append(re.sub(r'^\s*-\s+', '', lines[j]).strip())
+                          j += 1
+                      if vals:
+                          out.append('path: ' + ' / '.join(vals))
+                          i=j
+                          changed=True
+                          continue
+                  out.append(lines[i]); i+=1
+              if changed:
+                  p.write_text('\n'.join(out) + text[end:], encoding='utf-8')
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add '*.md'
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "fix: make documentation front matter Jekyll-compatible"
+          git push origin HEAD:integrate-best-ai
