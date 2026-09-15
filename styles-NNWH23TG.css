@@ -90,6 +90,11 @@ app-button .dropdown-icon {
   display: none !important;
 }
 
+/* Keep slider controls icon-only when the ligature font is unavailable. */
+slider-arrow-controls .slider-control-button > span {
+  display: none !important;
+}
+
 /* Draw a crisp, high-DPI vector chevron matching current text color */
 .dropdown-nav .dropdown-icon::after,
 app-button .dropdown-icon::after {
