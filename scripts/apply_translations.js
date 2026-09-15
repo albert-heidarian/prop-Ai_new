@@ -143,9 +143,97 @@ if (docsStart !== -1) {
   }
 }
 
-// 9. Fix docs tree indentation to RTL (padding-right instead of padding-left)
+// 9. Upgraded Navigation Menu Structure & Dropdown UI
+const eleStart = mainJs.indexOf('Ele={nav:[{title:');
+if (eleStart !== -1) {
+  const eleMarker = ']},_7=Ele';
+  const eleEnd = mainJs.indexOf(eleMarker, eleStart);
+  if (eleEnd !== -1) {
+    const upgradedEle = `Ele={nav:[
+      {
+        title:"خدمات",
+        link:"/product",
+        dropdown:{
+          id:"product",
+          navTitle:"خدمات",
+          navLink:"/product",
+          title:"راهکارهای هوشمند هوش مصنوعی برای رشد کسب‌وکار",
+          info:"پلتفرم جامع ایجنت‌های سازمانی، پردازش زبان، بینایی ماشین و اتوماسیون فرآیندها با بالاترین بازدهی.",
+          sublinks:[
+            {title:"پردازش زبان طبیعی (NLP)",icon:"chat",url:"/product"},
+            {title:"تحلیل پیشرفته کلان‌داده",icon:"analytics",url:"/product"},
+            {title:"اتوماسیون فرآیندهای کاری",icon:"bolt",url:"/product"},
+            {title:"بینایی و ادراک ماشین",icon:"visibility",url:"/product"}
+          ]
+        }
+      },
+      {
+        title:"کاربردها",
+        link:"/use-cases",
+        dropdown:{
+          id:"use-cases",
+          navTitle:"کاربردها",
+          navLink:"/use-cases",
+          title:"راهکارها و معماری‌های متناسب با نیاز هر صنعت",
+          info:"پیاده‌سازی ایجنت‌های مستقل متناسب با صنایع مالی، فناوری، مهندسی و مدیریت فرآیندهای سازمانی.",
+          sublinks:[
+            {title:"راهکارهای سازمان و انترپرایز",icon:"business",url:"/use-cases"},
+            {title:"کسب‌وکارهای داده‌محور و تحلیل",icon:"insights",url:"/use-cases"},
+            {title:"تیم‌های فنی و توسعه‌دهندگان",icon:"terminal",url:"/use-cases"}
+          ]
+        }
+      },
+      {title:"قیمت‌گذاری",link:"/pricing"},
+      {title:"وبلاگ",link:"/blog"},
+      {
+        title:"منابع",
+        link:"/docs",
+        dropdown:{
+          id:"resources",
+          navTitle:"منابع و مستندات",
+          navLink:"/docs",
+          title:"همه چیز برای شروع، یادگیری و ادغام با سیستم‌ها",
+          info:"مستندات گام‌به‌گام توسعه‌دهندگان، گزارش انتشار نسخه‌های جدید و دسترسی به پشتیبانی فنی.",
+          sublinks:[
+            {title:"مستندات جامع توسعه‌دهندگان",icon:"menu_book",url:"/docs"},
+            {title:"گزارش تغییرات و آپدیت‌ها",icon:"update",url:"/changelog"},
+            {title:"پشتیبانی فنی و مشاوره اختصاصی",icon:"support_agent",url:"/support"}
+          ]
+        }
+      }
+    ]}`;
+    mainJs = mainJs.substring(0, eleStart) + upgradedEle + mainJs.substring(eleEnd + 1);
+    console.log('✓ 9. Upgraded Ele Navigation Menu configuration');
+  }
+}
+
+// 9b. Enable rich chevron subnav link and RTL arrow direction
+if (mainJs.includes('b(5,"span",21),R(6,"keyboard_arrow_right"),w()()')) {
+  mainJs = mainJs.replace('b(5,"span",21),R(6,"keyboard_arrow_right"),w()()', 'b(5,"span",21),R(6,"keyboard_arrow_left"),w()()');
+  console.log('✓ 9b. Replaced chevron right with left for RTL in header dropdown');
+}
+
+// 9c. Enable navTitle header for all dropdowns with navTitle
+if (mainJs.includes('Me((t.dropdownContent==null?null:t.dropdownContent.id)==="product"&&t.dropdownContent!=null&&t.dropdownContent.navTitle?13:-1)')) {
+  mainJs = mainJs.replace(
+    'Me((t.dropdownContent==null?null:t.dropdownContent.id)==="product"&&t.dropdownContent!=null&&t.dropdownContent.navTitle?13:-1)',
+    'Me(t.dropdownContent!=null&&t.dropdownContent.navTitle?13:-1)'
+  );
+  console.log('✓ 9c. Enabled subnav header category for all menu dropdowns');
+}
+
+// 9d. Render rich items for all dropdown sublinks
+if (mainJs.includes('we(0,Fle,7,2,"a",17)(1,Ule,5,3,"a",18),e&2){let t=n.$implicit;Me(t.url==="/docs"?0:1)}')) {
+  mainJs = mainJs.replace(
+    'we(0,Fle,7,2,"a",17)(1,Ule,5,3,"a",18),e&2){let t=n.$implicit;Me(t.url==="/docs"?0:1)}',
+    'we(0,Fle,7,2,"a",17)(1,Ule,5,3,"a",18),e&2){let t=n.$implicit;Me(0)}'
+  );
+  console.log('✓ 9d. Enabled rich chevron sublink item for all menu sublinks');
+}
+
+// 9e. Fix docs tree indentation to RTL (padding-right instead of padding-left)
 mainJs = mainJs.split('Mi("padding-left",.75+t.level*1.2,"rem")').join('Mi("padding-right",.75+t.level*1.2,"rem")');
-console.log('✓ 9. Patched docs tree indentation for RTL');
+console.log('✓ 9e. Patched docs tree indentation for RTL');
 
 // 10. Replace common UI template text & buttons
 const stringReplacements = [

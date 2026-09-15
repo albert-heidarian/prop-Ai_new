@@ -562,6 +562,256 @@ input[type="text"], input[type="search"], input[type="email"], textarea {
 }
 
 /* ==========================================================================
+   Upgraded UI Menu & Dropdown Styling (Desktop & Mobile)
+   ========================================================================== */
+.header {
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  background: rgba(255, 255, 255, 0.88) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.header.scrolled,
+.header.opaque,
+.header.dropdown-open,
+.header.menu-open {
+  background: rgba(255, 255, 255, 0.96) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Nav Item Links */
+.button-nav {
+  font-family: "Vazirmatn", system-ui, sans-serif !important;
+  font-weight: 550 !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0 !important;
+  border-radius: 9999px !important;
+  padding: 8px 16px !important;
+  color: #374151 !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+}
+
+.button-nav:hover,
+.button-nav:focus-visible {
+  color: #111827 !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Header Dropdown Container & Glassmorphism */
+header-dropdown .dropdown,
+.header .dropdown {
+  direction: rtl !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border-bottom-left-radius: 20px !important;
+  border-bottom-right-radius: 20px !important;
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.14), 0 0 0 1px rgba(0, 0, 0, 0.05) !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+  padding: 2.25rem 2rem 2.5rem 2rem !important;
+}
+
+/* Dropdown Overlay */
+.dropdown-overlay {
+  background: rgba(0, 0, 0, 0.35) !important;
+  backdrop-filter: blur(3px) !important;
+  -webkit-backdrop-filter: blur(3px) !important;
+}
+
+/* Dropdown Title & Info typography */
+.dropdown-title {
+  direction: rtl !important;
+  text-align: right !important;
+  font-family: "Vazirmatn", system-ui, sans-serif !important;
+  font-weight: 750 !important;
+  font-size: 1.35rem !important;
+  line-height: 1.4 !important;
+  color: #111827 !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.dropdown-info {
+  direction: rtl !important;
+  text-align: right !important;
+  font-family: "Vazirmatn", system-ui, sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.65 !important;
+  color: #4b5563 !important;
+  margin: 0 0 1.5rem 0 !important;
+}
+
+/* Dropdown CTA Action Button */
+.dropdown .nav-button,
+header-dropdown .nav-button {
+  font-family: "Vazirmatn", system-ui, sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 0.88rem !important;
+  border-radius: 9999px !important;
+  padding: 9px 20px !important;
+  background: #111827 !important;
+  color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  box-shadow: 0 4px 12px rgba(17, 24, 39, 0.2) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.dropdown .nav-button:hover,
+header-dropdown .nav-button:hover {
+  background: #000000 !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Subnav Column Divider */
+.subnav-column {
+  border-inline: 1px solid rgba(0, 0, 0, 0.08) !important;
+  padding-inline: 1.5rem !important;
+}
+
+.subnav-label {
+  font-family: "Vazirmatn", system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  color: #6b7280 !important;
+  padding: 4px 12px !important;
+  margin-bottom: 0.75rem !important;
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+/* Subnav Item Cards / Links */
+.subnav-link {
+  direction: rtl !important;
+  text-align: right !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding: 10px 14px !important;
+  border-radius: 12px !important;
+  color: #1f2937 !important;
+  font-family: "Vazirmatn", system-ui, sans-serif !important;
+  font-size: 0.92rem !important;
+  font-weight: 550 !important;
+  text-decoration: none !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  border: 1px solid transparent !important;
+  margin-bottom: 4px !important;
+  position: relative !important;
+}
+
+.subnav-link:hover,
+.subnav-link:focus-visible {
+  background: #f3f4f6 !important;
+  color: #111827 !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
+  transform: translateX(-4px) !important;
+}
+
+/* Subnav Link Left Chevron Arrow */
+.subnav-link .link-arrow {
+  margin-inline-start: auto !important;
+  margin-inline-end: 0 !important;
+  color: #9ca3af !important;
+  font-size: 1.15rem !important;
+  transition: all 0.2s ease !important;
+  transform: none !important;
+}
+
+.subnav-link:hover .link-arrow {
+  color: #111827 !important;
+  transform: translateX(-3px) !important;
+}
+
+/* Subnav Link Icon styling */
+.subnav-link .link-icon {
+  margin-inline-end: 12px !important;
+  margin-inline-start: 0 !important;
+  font-size: 1.25rem !important;
+  color: #4b5563 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 8px !important;
+  background: rgba(0, 0, 0, 0.04) !important;
+  transition: all 0.2s ease !important;
+}
+
+.subnav-link:hover .link-icon {
+  color: #111827 !important;
+  background: #e5e7eb !important;
+}
+
+/* Mobile Menu Upgrades */
+.mobile-menu {
+  direction: rtl !important;
+  text-align: right !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border-bottom-left-radius: 20px !important;
+  border-bottom-right-radius: 20px !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.mobile-menu-content {
+  padding: 1.5rem 1.25rem 3rem 1.25rem !important;
+  direction: rtl !important;
+}
+
+.mobile-nav-item {
+  font-family: "Vazirmatn", system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.35rem !important;
+  padding: 14px 16px !important;
+  border-radius: 12px !important;
+  color: #111827 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  transition: all 0.2s ease !important;
+  margin-bottom: 6px !important;
+}
+
+.mobile-nav-item:hover,
+.mobile-nav-item:active {
+  background: #f3f4f6 !important;
+}
+
+/* Header Primary CTA Button */
+.download-button,
+.header .download-button {
+  font-family: "Vazirmatn", system-ui, sans-serif !important;
+  font-weight: 650 !important;
+  font-size: 0.92rem !important;
+  letter-spacing: 0 !important;
+  border-radius: 9999px !important;
+  padding: 8px 20px !important;
+  background: #111827 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.download-button:hover,
+.header .download-button:hover {
+  background: #000000 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ==========================================================================
    Full RTL Footer Architecture
    ========================================================================== */
 .footer,
